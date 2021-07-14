@@ -11,4 +11,6 @@ rule main = parse
   | num as n { NUMBER (int_of_string n) }
   | "+" { PLUS }
   | "-" { MINUS }
+  | "*" { MULT }
+  | "/" { DIV }
   | eof { EOF }
