@@ -1,0 +1,8 @@
+{
+  "dependencies": {
+    "ocaml": "4.12.x",
+    "@opam/reason": "*",
+    "@opam/dune": "*",
+    "@opam/menhir": "*"
+  }
+}
