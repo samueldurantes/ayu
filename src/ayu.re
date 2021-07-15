@@ -1,7 +1,9 @@
-let expr = "2 + 5 * 4 / 5"
+open Lexing
+
+let file = open_in("calc.ayu")
 
 let () = {
-  Lexing.from_string(expr)
+  from_channel(file)
   |> Parser.main(Lexer.main)
   |> string_of_int
   |> print_endline
