@@ -1,4 +1,5 @@
 %token <int> NUMBER
+%token LPAREN RPAREN
 %token PLUS MINUS MULT DIV
 %token EOF
 
@@ -14,6 +15,7 @@ main:
   | EOF { 0 }
 
 operation:
+  | LPAREN operation RPAREN { $2 }
   | operation PLUS operation { $1 + $3 }
   | operation MINUS operation { $1 - $3 }
   | operation MULT operation { $1 * $3 }

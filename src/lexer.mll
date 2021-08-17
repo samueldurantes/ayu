@@ -11,6 +11,8 @@ rule main = parse
   | whitespace+ { main lexbuf }
   | new_line+ { main lexbuf }
   | num as n { NUMBER (int_of_string n) }
+  | "(" { LPAREN }
+  | ")" { RPAREN }
   | "+" { PLUS }
   | "-" { MINUS }
   | "*" { MULT }
